@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>Canvas stitching problem example</title>
+<script type="text/javascript">
+function draw(){
+    var canvas = document.getElementById('mycanvas');
+    if (canvas.getContext){
+        var ctx = canvas.getContext('2d');
+        ctx.fillStyle = 'rgb(0,0,0)';
+
+        ctx.beginPath()
+        ctx.moveTo(0, 0);
+        ctx.lineTo(50.5, 0);
+        ctx.lineTo(50.5, 100);
+        ctx.lineTo(0, 100);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.beginPath()
+        ctx.moveTo(50.5, 0);
+        ctx.lineTo(100, 0);
+        ctx.lineTo(100, 100);
+        ctx.lineTo(50.5, 100);
+        ctx.closePath();
+        ctx.fill();
+    }
+}
+</script>
+</head>
+<body onload="draw();">
+<canvas id="mycanvas" width="100" height="100"></canvas>
+<div style="width:400px;">
+This page demonstrates the problem I'm running into using the Canvas element to draw
+polygons with fractional coordinates. There's a 'stitching' line down the center of
+the rendered result, thanks to the center line being at 50.5 along the x-axis.
+</div>
+<div style="width:400px;">
+See the source and the Flash version that works as I'd expect (no stitching) at
+<a href="http://github.com/petewarden/stitchingbug/">http://github.com/petewarden/stitchingbug/</a>
+</div>
+</body>
+</html>

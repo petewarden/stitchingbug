@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx"
+	width="200" height="200" 
+	applicationComplete="draw()">
+	
+	<fx:Script>
+	<![CDATA[
+
+		import flash.external.ExternalInterface;
+		
+		private function draw(): void {
+			
+			viewer.graphics.clear();
+
+			viewer.graphics.lineStyle();
+			viewer.graphics.beginFill(0x000000);
+			viewer.graphics.moveTo(0, 0);
+			viewer.graphics.lineTo(50.5, 0);
+			viewer.graphics.lineTo(50.5, 100);
+			viewer.graphics.lineTo(0, 100);
+			viewer.graphics.endFill();
+			
+			viewer.graphics.lineStyle();
+			viewer.graphics.beginFill(0x000000);
+			viewer.graphics.moveTo(50.5, 0);
+			viewer.graphics.lineTo(100, 0);
+			viewer.graphics.lineTo(100, 100);
+			viewer.graphics.lineTo(50.5, 100);
+			viewer.graphics.endFill();
+		}
+		]]>
+	</fx:Script>
+		
+	<mx:UIComponent id="viewer"></mx:UIComponent>
+</s:Application>
