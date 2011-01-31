@@ -6,8 +6,9 @@ function draw(){
     var canvas = document.getElementById('mycanvas');
     if (canvas.getContext){
         var ctx = canvas.getContext('2d');
-        ctx.fillStyle = 'rgb(0,0,0)';
-
+        ctx.fillStyle = 'rgba(0,0,0,0.5)';
+        ctx.strokeStyle = 'rgba(0,0,0,0.5)'
+        
         ctx.beginPath()
         ctx.moveTo(0, 0);
         ctx.lineTo(50.5, 0);
@@ -15,6 +16,7 @@ function draw(){
         ctx.lineTo(0, 100);
         ctx.closePath();
         ctx.fill();
+        ctx.stroke();
 
         ctx.beginPath()
         ctx.moveTo(50.5, 0);
@@ -23,6 +25,7 @@ function draw(){
         ctx.lineTo(50.5, 100);
         ctx.closePath();
         ctx.fill();
+        ctx.stroke();
     }
 }
 </script>
